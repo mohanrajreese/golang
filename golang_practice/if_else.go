@@ -1,30 +1,35 @@
 package main
 
 import (
-	"fmt"
-	"time"
+	. "fmt"
+	. "time"
 )
 
 func main() {
 	var number int
-	fmt.Println("Enter the input :")
-	fmt.Scan(&number)
+	Println("Enter the input :")
+	var input, err = Scanln(&number)
+	if err != nil {
+		println("There is an error in the input")
+		return
+	}
+	println(input, "A")
 	if number%2 == 0 {
-		fmt.Println("The given input is Even Number", number)
+		Println("The given input is Even Number", number)
 	} else {
-		fmt.Println("The given number is Odd number : ", number)
+		Println("The given number is Odd number : ", number)
 	}
 
 	if number < 0 {
-		fmt.Println("the given number is negative number ", number)
+		Println("the given number is negative number ", number)
 	} else if number == 0 {
-		fmt.Println("the give number is Zero")
+		Println("the give number is Zero")
 	} else {
-		fmt.Println("the given number is positive number", number)
+		Println("the given number is positive number", number)
 	}
 
-	fmt.Println("The Output is: ")
-	fmt.Println(number)
+	Println("The Output is: ")
+	Println(number)
 
-	fmt.Println(time.Now().Weekday())
+	Println(Now().Weekday())
 }
